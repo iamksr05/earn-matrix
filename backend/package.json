@@ -1,0 +1,27 @@
+{
+  "name": "developers-dojo-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend API for Flare integrations (FTSO, FDC, FAssets, Smart Accounts)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.15.0",
+    "@supabase/supabase-js": "^2.53.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@jest/globals": "^29.7.0",
+    "supertest": "^6.3.3"
+  }
+}
+

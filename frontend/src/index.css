@@ -1,0 +1,321 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Themeable Colors - Pointer AI Vibe */
+    --background: 210 11% 7%;
+    /* #0f1211 */
+    --foreground: 160 14% 93%;
+    /* #e7eceb */
+
+    --muted: 240 2% 16%;
+    /* #27272a */
+    --muted-foreground: 160 14% 93% / 0.7;
+    --muted-foreground-light: 160 14% 93% / 0.5;
+    --muted-foreground-dark: 160 14% 93% / 0.6;
+
+    --card: 220 17% 98% / 0.01;
+    --card-foreground: 160 14% 93%;
+
+    --popover: 210 11% 7%;
+    --popover-foreground: 160 14% 93%;
+
+    /* Primary Accent Colors */
+    --primary: 165 96% 71%;
+    /* #78fcd6 */
+    --primary-foreground: 160 8% 6%;
+    /* #0d0f0e */
+    --primary-dark: 160 100% 50%;
+    /* #00ffb6 */
+    --primary-light: 160 48% 87%;
+
+    /* Secondary Accent Colors */
+    --secondary: 160 14% 93%;
+    /* #e7eceb */
+    --secondary-foreground: 165 14% 8%;
+    /* #141a18 */
+
+    --accent: 240 2% 25%;
+    /* #3f3f42 */
+    --accent-foreground: 240 2% 96%;
+    /* #f4f4f5 */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 100% 100% / 0.08;
+    --border-light: 210 17% 6% / 0.1;
+    --border-dark: 210 17% 6% / 0.05;
+
+    --input: 240 100% 100% / 0.08;
+    --ring: 165 96% 71%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Same as root since Pointer AI is dark by default, but keeping explicit for clarity */
+    --background: 210 11% 7%;
+    --foreground: 160 14% 93%;
+    --muted: 240 2% 16%;
+    --muted-foreground: 160 14% 93% / 0.7;
+    --card: 220 17% 98% / 0.01;
+    --card-foreground: 160 14% 93%;
+    --popover: 210 11% 7%;
+    --popover-foreground: 160 14% 93%;
+    --primary: 165 96% 71%;
+    --primary-foreground: 160 8% 6%;
+    --secondary: 160 14% 93%;
+    --secondary-foreground: 165 14% 8%;
+    --accent: 240 2% 25%;
+    --accent-foreground: 240 2% 96%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 100% 100% / 0.08;
+    --input: 240 100% 100% / 0.08;
+    --ring: 165 96% 71%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+/* --- Tailwind base --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* simple glass card */
+.cardGlass {
+  @apply rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl;
+}
+
+.cardGlass h3 {
+  @apply text-lg font-semibold mb-2;
+}
+
+.cardGlass p {
+  @apply text-sm text-white/70;
+}
+
+/* === UIverse: SearchGlow === */
+.uiv-grid {
+  height: 70px;
+  max-width: 640px;
+  width: 100%;
+  position: relative;
+}
+
+.uiv-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: radial-gradient(120px 40px at 20% 60%, rgba(0, 255, 182, 0.45), transparent 60%),
+    radial-gradient(120px 40px at 80% 40%, rgba(120, 252, 214, 0.45), transparent 60%);
+  filter: blur(22px);
+  opacity: .7;
+}
+
+.uiv-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.uiv-white {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+}
+
+.uiv-input {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 0 56px 0 44px;
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  outline: none;
+}
+
+.uiv-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+  border: none;
+}
+
+.uiv-input::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* === UIverse: NeonButton (4 spans) === */
+.uiv-neon-btn {
+  position: relative;
+  padding: 1rem 1.5rem;
+  color: hsl(var(--primary-foreground));
+  background: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary-dark));
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: .2s;
+  overflow: hidden;
+}
+
+.uiv-neon-btn:hover {
+  box-shadow: 0 0 10px hsl(var(--primary)), 0 0 25px hsl(var(--primary-dark)), 0 0 50px hsl(var(--primary-dark));
+}
+
+.uiv-neon-btn span {
+  position: absolute;
+}
+
+.uiv-neon-btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary-light)));
+  animation: n1 2s linear infinite;
+}
+
+.uiv-neon-btn span:nth-child(2) {
+  right: 0;
+  top: -100%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, hsl(var(--primary-light)));
+  animation: n2 2s linear infinite 0.5s;
+}
+
+.uiv-neon-btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, hsl(var(--primary-light)));
+  animation: n3 2s linear infinite 1s;
+}
+
+.uiv-neon-btn span:nth-child(4) {
+  left: 0;
+  bottom: -100%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, hsl(var(--primary-light)));
+  animation: n4 2s linear infinite 1.5s;
+}
+
+@keyframes n1 {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes n2 {
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes n3 {
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes n4 {
+  to {
+    bottom: 100%;
+  }
+}
+
+/* === UIverse: GlassCard === */
+.uiv-card-container {
+  position: relative;
+  width: 420px;
+  max-width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+.uiv-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: hsl(var(--border));
+}
+
+.uiv-card {
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.uiv-card-header {
+  background: hsl(var(--muted));
+  padding: 14px 16px;
+  font-weight: 600;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.uiv-card-list {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  overflow: auto;
+}
+
+.uiv-card-list li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: hsl(var(--muted-foreground));
+  font-size: 14px;
+}
+
+.uiv-card-cta {
+  margin: 12px 16px 16px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+  color: hsl(var(--primary-foreground));
+  border: none;
+}
+
+/* === 3D Marquee Styles === */
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+/* Ensure background is pure black */
+html,
+body,
+#root {
+  background: hsl(var(--background));
+}

@@ -1,0 +1,32 @@
+{
+  "name": "smart-contracts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "node": "hardhat node",
+    "deploy:adapter": "hardhat run scripts/deploy-flare-adapter.js --network flareMainnet",
+    "deploy:adapter:coston": "hardhat run scripts/deploy-flare-adapter.js --network coston",
+    "deploy:adapter:local": "hardhat run scripts/deploy-flare-adapter.js --network localhost",
+    "deploy:test-token": "hardhat run scripts/deploy-test-token.js --network localhost",
+    "setup:local": "hardhat run scripts/setup-local-network.js --network localhost",
+    "mint:tokens": "hardhat run scripts/mint-tokens.js --network localhost",
+    "faucet:request": "hardhat run scripts/request-faucet.js --network localhost"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "chai": "^4.5.0",
+    "hardhat": "^2.26.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^17.2.1",
+    "ethers": "^6.15.0"
+  }
+}

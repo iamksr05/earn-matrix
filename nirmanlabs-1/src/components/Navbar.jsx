@@ -39,6 +39,7 @@ const Navbar = ({ onMenuClick, onOpenReferral }) => {
         { name: 'Bounties', path: '/bounties' },
         { name: 'Projects', path: '/our-projects' },
         { name: 'Grants', path: '/grants' },
+        { name: 'Live Charts', path: '/live-charts' },
         { name: 'Blogs', path: '/blogs' },
         { name: 'PRO', path: '/pro', isPro: true },
     ];

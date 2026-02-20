@@ -27,6 +27,7 @@ import SubmitProject from './pages/SubmitProject'
 import TransactionHistory from './pages/TransactionHistory'
 import ProjectDetail from './pages/ProjectDetail'
 import GrantDetail from './pages/GrantDetail'
+import Livechart from './pages/LiveChart'
 
 function App() {
   const { authenticated, user } = usePrivy()
@@ -62,6 +63,7 @@ function App() {
               <Route path="/project/:id" element={<ProjectDetail />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:id" element={<BlogDetail />} />
+              <Route path="/live-charts" element={<Livechart />} />
               <Route path="/sponsor-home" element={<SponsorHome />} />
               <Route path="/sponsor-team" element={<SponsorTeam />} />
               <Route path="/sponsor-edit" element={<SponsorEditProfile />} />

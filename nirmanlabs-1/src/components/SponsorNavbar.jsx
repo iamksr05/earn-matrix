@@ -59,6 +59,10 @@ const SponsorNavbar = ({ onOpenWallet }) => {
                         Grants
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all group-hover/link:w-full" />
                     </Link>
+                    <Link to="/live-charts" className="hover:text-slate-900 transition-colors relative group/link">
+                        Live Charts
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all group-hover/link:w-full" />
+                    </Link>
                 </div>
             </div>
 

@@ -25,6 +25,22 @@
 
 ---
 
+## 📸 Platform Screenshots
+
+<div align="center">
+  <img src="./assets/platform-1.png" alt="Student Dashboard" width="800">
+  <br/><br/>
+  <img src="./assets/platform-2.png" alt="Create Bounty Sponsor Panel" width="800">
+  <br/><br/>
+  <img src="./assets/platform-3.png" alt="Bounty Details Page" width="800">
+  <br/><br/>
+  <img src="./assets/platform-4.png" alt="Student Submission Portal" width="800">
+  <br/><br/>
+  <img src="./assets/platform-5.png" alt="Sponsor Review Panel" width="800">
+</div>
+
+---
+
 ## ⚡ About The Project
 **Earn Matrix** is fundamentally reshaping how campus talent networks function. Instead of fragmented university job boards, delayed banking settlements, and unverified resumes, Earn Matrix introduces an entirely autonomous, transparent, and frictionless gig economy exclusively for students.
 

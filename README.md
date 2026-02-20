@@ -1,205 +1,160 @@
-# ChainMatrix
+<div align="center">
+  <img src="https://cryptologos.cc/logos/algorand-algo-logo.png" alt="Algorand Logo" height="120">
+  <br/>
+  
+  <h1 align="center">Earn Matrix</h1>
+  <p align="center">
+    <strong>The Decentralized Operating System for Modern Campus Talent, Powered Entirely by Algorand.</strong>
+  </p>
 
-**The First Decentralized Freight & Freelancing Marketplace on the Flare Network**
+  <p align="center">
+    <a href="#about-the-project">About</a> •
+    <a href="#why-algorand">Why Algorand?</a> •
+    <a href="#architecture">System Architecture</a> •
+    <a href="#features">Key Features</a> •
+    <a href="#smart-contracts">Smart Contracts</a> •
+    <a href="#installation">Installation</a>
+  </p>
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Status](https://img.shields.io/badge/status-active-success.svg)
-![Network](https://img.shields.io/badge/network-Flare-orange.svg)
-
----
-
-## 🟢 Project Overview
-
-ChainMatrix is an innovative decentralized marketplace that empowers freight shipping and freelancing through blockchain technology. By leveraging the Flare Network, ChainMatrix introduces trustless transactions, escrow, cross-chain payments, and gasless user onboarding—all via modern, secure, and scalable architecture.
-
-> **Demo:** [View Live Demo](https://chain-matrix.vercel.app/) <!-- Replace with actual demo link -->
-
----
-
-## 📐 Architecture & API Overview
-
-- **Frontend:** React + Vite, styled with Tailwind CSS and animated with Framer Motion for a bold "Antigravity" themed UI.
-- **Backend:** Node.js & Express, serving RESTful APIs for authentication, pricing oracle, escrow management, FTSO data, and Flare Data Connector (FDC) integration.
-- **Database:** Supabase used for storing user profiles, job postings, bounties, and transactional metadata.
-- **Smart Contracts:** Deployed on Flare/Coston2, responsible for escrow, payment settlements, and cross-chain verification.
-- **Auth:** Wallet-based (Privy) and social login (Clerk) options.
-- **APIs Used:**
-  - **FTSO**: Fetch live price data (BTC, XRP, FLR).
-  - **FDC**: Enable trustless verification of payments from major blockchains.
-  - **Supabase REST**: User data, jobs, escrow status.
-  - **Privy/Clerk**: Authentication.
-  - **Escrow Smart Contracts**: Lock, release, and dispute funds.
-  <!-- Add more if you use additional APIs -->
-
-**Flow Diagram:**
-
-```plaintext
-[ User ] <---> [ Frontend App ] <---> [ Backend API ] <---> [ Flare Network (FTSO & FDC) ]
-  |                                            |                                 |
-[ Wallet (Privy/Clerk) ]           [ Supabase Database ]        [ Smart Contracts (Escrow, Payments) ]
-```
+  <p align="center">
+    <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/iamksr05/earn-matrix">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg">
+    <img alt="Algorand" src="https://img.shields.io/badge/Algorand-Ecosystem-black.svg?logo=algorand">
+  </p>
+</div>
 
 ---
 
-## 🚀 Key Features
+## ⚡ About The Project
+**Earn Matrix** is fundamentally reshaping how campus talent networks function. Instead of fragmented university job boards, delayed banking settlements, and unverified resumes, Earn Matrix introduces an entirely autonomous, transparent, and frictionless gig economy exclusively for students.
 
-*   **🛡️ Trustless Escrow:** Secure fund locking via smart contracts, released only upon verified work completion.
-*   **📈 Live Market Intelligence:** Real-time asset pricing (BTC, XRP, FLR) via FTSO oracle integration.
-*   **🌉 Cross-Chain Payments:** Supports on-chain verification for Bitcoin, XRP, and more through the FDC.
-*   **⛽ Gasless Transactions:** Seamless user experience—no need for native Flare tokens due to Account Abstraction.
-*   **🎨 Premium UI/UX:** Futuristic interface, responsive and animated for modern users.
+Sponsors (companies, professors, or student organizations) can post **Grants, Bounties, and Gigs**. Students can claim these gigs, complete the work, and be paid automatically.
 
----
+Every gig completed is secured via trustless smart contracts. Every payment is settled instantly on-chain in **ALGO** or **USDC**. Every piece of work acts as immutable, cryptographic proof-of-work for a student's permanent digital resume.
 
-## 🧩 Technology Stack
+## 🟢 Why Algorand?
+We chose Algorand as the absolute foundational layer of Earn Matrix because of its unparalleled performance for campus-scale micropayments and data integrity:
 
-### Frontend
-- **Framework:** [Vite](https://vitejs.dev/) + [React](https://react.dev/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) + CSS
-- **Animation:** [Framer Motion](https://framer.com/motion/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Authentication:** [Privy](https://www.privy.io/) (Web3), [Clerk](https://clerk.com/) (social login)
-
-### Backend
-- **Runtime:** [Node.js](https://nodejs.org/)
-- **Server:** [Express](https://expressjs.com/)
-- **Database:** [Supabase](https://supabase.com/)
-- **Blockchain Interaction:** [Ethers.js v6](https://docs.ethers.org/v6/)
-- **APIs:** FTSO (price oracle), FDC (cross-chain validation)
-
-### Smart Contracts
-- **Network:** Flare & Coston2 Testnet
-- **Framework:** [Hardhat](https://hardhat.org/)
-- **Language:** Solidity 0.8.x
+1. **Instant Finality (~3.3 seconds):** Sponsor bounty payouts settle natively on layer-1 almost instantly. There are no pending transactions, no rollups, and no waiting days for ACH bank transfers.
+2. **Fractional Transaction Fees:** With fees at a fraction of a penny (0.001 ALGO), we can facilitate micro-bounties and peer-to-peer campus transfers (like buying a slice of pizza or splitting a hackathon prize) without gas fees destroying the profit.
+3. **Pure Proof of Stake (PPoS):** Universities demand green technology. Algorand is functionally carbon-negative and incredibly energy-efficient, making it the perfect protocol for academic adoption.
+4. **TEAL Smart Contracts:** Robust, secure, and highly predictable automated escrow systems guarantee that if a student finishes the work, the funds locked in the Algorand contract are immutably distributed, completely eliminating campus wage theft or late payments.
+5. **Algorand Standard Assets (ASA):** Native tokenization at the protocol layer allows us to seamlessly integrate USDC logic without writing complex, vulnerable ERC20 wrappers.
 
 ---
 
-## 🗂️ Project Structure
+## 🏗 System Architecture Flow
+Earn Matrix leverages a hybrid Web2/Web3 architecture to ensure lightning-fast UI rendering while maintaining strict cryptographic security for settlements:
 
-```bash
-chain-matrix/
-├── backend/            # Express API server (FTSO/FDC/Supabase integration)
-├── frontend/           # React + Vite client ("Antigravity" UI)
-├── smart-contracts/    # Hardhat project (Escrow, Payment Contracts)
-├── supabase/           # DB schema, migration files, config
-└── README.md           # This documentation
-```
+1. **Authentication:** Users authenticate via Web3 Wallets (Privy, Pera, Defly) which maps their Algorand Wallet Address to their Session UI.
+2. **The Post & Escrow:** A Sponsor creates a "Bounty". When hitting publish, the Web3 wallet prompts the sponsor to sign an Algorand transaction, depositing the reward (ALGO/USDC) directly into the `EarnMatrixEscrow` Smart Contract. The database records the bounty metadata.
+3. **The Claim & Work:** Students browse the `/bounties` board. All state (Titles, Descriptions) is fetched instantly from Supabase (PostgreSQL), while the "Funded Status" is verified by querying the Algorand Node. 
+4. **The Submission:** Students submit their GitHub links or proof-of-work. The UI updates the state to `submitted`.
+5. **The Settlement:** The Sponsor reviews the submission. Upon approval, the Smart Contract function `releaseEscrow` is triggered. The funds are instantaneously transferred from mathematical lockbox directly into the student's Algorand wallet via L1 consensus.
+6. **The Ledger:** The database marks the task as `paid`, and the blockchain immortalizes the transaction, serving as a verifiable resume credential permanently tied to the student's DID.
 
 ---
 
-## ⚡ Getting Started
+## 🚀 Key Platform Features
+
+### 1. On-Chain Escrow Bounties (Anti-Wage Theft)
+Gigs aren't just verbal agreements; they are cryptographically locked funds. We leverage an escrow smart contract that natively interfaces with Algorand to hold, track, and release tokens trustlessly. If a sponsor funds a task, the student knows the money 100% exists and cannot be clawed back maliciously.
+
+### 2. The Algorand "Split-Logic" Calculator Module
+A built-in utility allowing students to seamlessly calculate and mathematically split bills, hardware costs, or shared project bounties. Integrated deeply with the native ASA ecosystem for frictionless peer-to-peer campus transfers.
+
+### 3. Cryptographic Proof of Work (Verified Resumes)
+When a student completes a bounty, it isn't just a line on a PDF resume or a LinkedIn post. It is a verifiable, timestamped transaction on the Algorand blockchain proving exactly what they built, the exact code repository they submitted, the sponsor who paid them, and when it happened. Employers can audit a student's history cryptographically.
+
+### 4. DPDP Act Privacy / Consent Audit Log 
+A real-time module acting as a privacy guard. It allows students to visually track and toggle which campus applications (e.g. CareerPortal, AlumniConnect) have read-access to their academic data. 
+
+---
+
+## � Tech Stack Deep Dive
+Earn Matrix is built using a modern, scalable Web3 stack engineered for performance:
+
+* **Blockchain / L1 Core:** [Algorand](https://algorand.com/) — Protocol Layer & Smart Contracts
+* **Wallet Ecosystem:** [Privy](https://privy.io/) — Embedded Web3 Wallets & Social Logins for zero-friction student onboarding
+* **Frontend Framework:** [React.js](https://react.dev/) + [Vite](https://vitejs.dev/) — Lightning fast CSR
+* **Styling & UX:** [Tailwind CSS](https://tailwindcss.com/) + [Framer Motion](https://www.framer.com/motion/) — Micro-animations & responsive aesthetics
+* **Backend Database:** [Supabase (PostgreSQL)](https://supabase.com/) — Relational metadata mapping
+* **Node Environment:** Node.js (v18+)
+
+---
+
+## ⚙️ Installation & Getting Started
 
 ### Prerequisites
+- Node.js installed (v18+)
+- An Algorand Web3 Wallet (via Privy, Pera Wallet, or Defly)
+- A Supabase Project (for backend metadata syncing)
+- Optional: Python/Algosdk if deploying custom PyTeal logic
 
-- Node.js (v18+)
-- Git
-- Flare/Coston2 wallet private key (for contract deployment)
-
-### 1. Installation
-
+### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/chain-matrix.git
+git clone https://github.com/iamksr05/earn-matrix.git
 cd chain-matrix
+```
 
-# Frontend
-cd frontend
+### 2. Frontend Setup
+```bash
+cd nirmanlabs-1
 npm install
+```
 
-# Backend
-cd ../backend
-npm install
+Create a `.env` file in the `nirmanlabs-1` folder and populate it. You will need an Algorand Testnet node URL (e.g. from AlgoNode):
+```env
+# Network and RPC
+VITE_RPC_URL=https://testnet-api.algonode.cloud
+VITE_CHAIN_ID=416002 
 
 # Smart Contracts
+VITE_ESCROW_ADDRESS=YOUR_DEPLOYED_ALGORAND_APP_ID
+
+# Services
+VITE_PRIVY_APP_ID=YOUR_PRIVY_ID
+VITE_SUPABASE_URL=YOUR_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+
+Run the development server natively:
+```bash
+npm run dev
+```
+
+### 3. Smart Contract Deployment (Optional)
+If you wish to deploy a fresh instance of the Escrow application to the Algorand Testnet:
+```bash
 cd ../smart-contracts
 npm install
-```
-
-### 2. Environment Setup
-
-Add `.env` files in each workspace as shown below:
-
-**Backend (`backend/.env`):**
-```env
-FLARE_RPC=https://coston2-api.flare.network/ext/C/rpc
-FTSO_ORACLE_ADDR=0x3d893C53D9e8056135C26C8c638B76C8b60Df726
-SUPABASE_URL=your_supabase_url
-SUPABASE_KEY=your_supabase_key
-PORT=3000
-```
-
-**Frontend (`frontend/.env`):**
-```env
-VITE_API_URL=http://localhost:3000
-VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
-VITE_PRIVY_APP_ID=your_privy_id
-```
-
-### 3. Running Locally
-
-Run each component in separate terminals:
-
-**Backend:**
-```bash
-cd backend
-npm run dev
-# Server runs at http://localhost:3000
-```
-
-**Frontend:**
-```bash
-cd frontend
-npm run dev
-# App at http://localhost:5173
-```
-
-**Smart Contracts (Hardhat node):**
-```bash
-cd smart-contracts
-npx hardhat node
+# Note: Ensure you have funded your deployer mnemonic via the Algorand Dispenser
+npx hardhat run scripts/deploy.js --network testnet
 ```
 
 ---
 
-## 📖 API Reference
-
-| Endpoint                        | Method | Description                           |
-| ------------------------------- | ------ | ------------------------------------- |
-| `/api/ftso/prices`              | GET    | Returns live FTSO price data          |
-| `/api/fdc/verify-tx`            | POST   | Cross-chain payment verification      |
-| `/api/escrow/create`            | POST   | Create escrow contract                |
-| `/api/escrow/release`           | POST   | Release escrow funds                  |
-| `/api/jobs`                     | GET    | List jobs and bounties                |
-| `/api/auth/login`               | POST   | Auth (Privy/Clerk, wallet, social)    |
-
-<!-- Add more endpoints as needed from your backend/API code -->
-
----
-
-## 🔮 Roadmap
-
-- [x] "Antigravity"-themed UI
-- [x] FTSO price feed integration
-- [x] Live Charts page
-- [ ] Smart contract audits & security hardening
-- [ ] Mainnet launch (Flare Network)
-- [ ] Reputation & Rating system
-- [ ] Mobile responsive app
+## 🛡️ Smart Contract Architecture Overview
+Our primary smart contract acts as an **Escrow Manager** written for Algorand's AVM. 
+* **State:** The contract holds local state arrays tracking `TaskID` -> `(SponsorAddress, WorkerAddress, TokenAmount, Status)`.
+* **Funding:** Sponsors call the application with an `AssetTransfer` inner transaction grouped containing the reward natively bound.
+* **Release:** Authorized Sponsors can trigger the application to issue an `InnerTransaction` transferring the exact requested ASA balance sequentially to the student's registered worker address.
 
 ---
 
 ## 🤝 Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-We welcome contributors!
-- Open issues for bugs, ideas, or feature requests.
-- Submit pull requests.
-- See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AlgorandIntegration`)
+3. Commit your Changes (`git commit -m 'Add some AlgorandIntegration'`)
+4. Push to the Branch (`git push origin feature/AlgorandIntegration`)
+5. Open a Pull Request
 
----
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## 📄 License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-**Demo:** [Try ChainMatrix](https://chain-matrix.vercel.app/) <!-- Replace with your live demo URL -->
+<p align="center">
+  <br>
+  <i>"Building the future of verifiable student work, secured mathematically by Algorand."</i>
+</p>

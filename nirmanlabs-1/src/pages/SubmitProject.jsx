@@ -6,6 +6,7 @@ import {
     ArrowLeft, Github, Twitter, ExternalLink,
     Video, CheckCircle, Send, AlertCircle, Loader2
 } from 'lucide-react';
+import BountyChat from '../components/BountyChat';
 
 const SubmitProject = () => {
     const { id } = useParams();
@@ -55,7 +56,7 @@ const SubmitProject = () => {
 
     return (
         <div className="min-h-screen flex flex-col font-sans">
-            <main className="flex-1 max-w-3xl mx-auto w-full pt-32 pb-24 px-6">
+            <main className="flex-1 max-w-3xl mx-auto w-full pt-32 pb-24 px-6 relative">
                 {/* Progress Stepper */}
                 <div className="flex items-center justify-between mb-12 px-4">
                     {[1, 2, 3].map((num) => (
@@ -190,6 +191,10 @@ const SubmitProject = () => {
                         </button>
                     </div>
                 </div>
+
+                {/* Embed Live Chat Component */}
+                <BountyChat taskId={id} />
+
             </main>
         </div>
     );

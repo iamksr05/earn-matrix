@@ -12,6 +12,7 @@ export const MOCK_BLOGS = [
     { id: 4, title: "Future of Decentralized Talent Networks", category: "WEB3", date: "NOV 2025", comments: 45, readTime: "4 min read", content: "Web3 is changing how we collaborate. Decentralized talent networks allow builders to coordinate globally without traditional corporate structures...", image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2064" },
 ];
 
+
 const Blogs = () => {
     const navigate = useNavigate();
     const blogPosts = MOCK_BLOGS;
@@ -22,7 +23,7 @@ const Blogs = () => {
         <div className="min-h-screen bg-[#fcfcfd] flex flex-col font-sans">
             <Navbar />
 
-            {/* --- DARK HERO HEADER --- */}
+            {}
             <div className="pt-40 pb-20 bg-[#1e3a8a] text-center text-white">
                 <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">Latest News & Articles</h1>
                 <div className="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-300">

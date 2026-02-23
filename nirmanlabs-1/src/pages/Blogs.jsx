@@ -24,6 +24,8 @@ const Blogs = () => {
             <Navbar />
 
             {}
+
+
             <div className="pt-40 pb-20 bg-[#1e3a8a] text-center text-white">
                 <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">Latest News & Articles</h1>
                 <div className="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-300">
@@ -84,6 +86,7 @@ const Blogs = () => {
                                 <h3 className="text-lg font-black text-slate-900 leading-snug mb-6 tracking-tight group-hover:text-blue-600 transition-colors">
                                     {post.title}
                                 </h3>
+                                
                                 <div className="flex items-center justify-between pt-6 border-t border-slate-50">
                                     <button
                                         onClick={() => navigate(`/blog/${post.id}`, { state: { post } })}
